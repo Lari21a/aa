@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para o Meu Amor ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    .message {
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      opacity: 0;
+      transform: translateY(20px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 30px;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .message.show {
+      opacity: 1;
+      transform: translateY(0);
+      position: static;
+      pointer-events: auto;
+    }
+
+    h1 {
+      color: #d65a31;
+      margin-bottom: 25px;
+      font-size: 2.2em;
+    }
+
+    h2 {
+      color: #e07a5f;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      font-weight: bold;
+      color: #d65a31;
+      font-size: 1.2em;
+    }
+
+    button {
+      background-color: #e07a5f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #d65a31;
+      transform: translateY(-3px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 1em;
+      }
+      button {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 15px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      p {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Primeira mensagem -->
+    <div id="initial-message" class="message show">
+      <h1>Olá, meu amor! Prepare-se para uma surpresa... 😉</h1>
+      <button id="revealButton">Clique aqui para descobrir!</button>
+    </div>
+
+    <!-- Mensagem romântica -->
+    <div id="love-declaration" class="message">
+      <h2>Feliz dia  <span class="highlight"></span> dos <span class="highlight">Namorados</span>!</h2>
+      <p>Mesmo não estando juntos nesta data, quero que você saiba que sou muito feliz ao seu lado e extremamente grata por ter alguém como você na minha vida.</p>
+      <p>Às vezes, quando estamos juntos, olho pra você e penso que você é tudo que eu sempre desejei.</p>
+      <p>Me sinto bem com você, com tudo o que vivemos, com o que você me proporciona e, acima de tudo, com quem você é.</p>
+      <p>Quero crescer e aprender com você, quero sempre estar ao seu lado nos momentos bons e ruins. Eu tô aqui pra você, sempre.</p>
+      <p>Eu só tenho a agradecer por esse tempo ao seu lado. Eu te amo muito, meu amor.</p>
+      <p class="signature">Com todo o meu amor, Sua Lari ❤️</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const revealButton = document.getElementById('revealButton');
+      const initialMessage = document.getElementById('initial-message');
+      const loveDeclaration = document.getElementById('love-declaration');
+
+      revealButton.addEventListener('click', function () {
+        initialMessage.classList.remove('show');
+        initialMessage.style.opacity = '0';
+        initialMessage.style.transform = 'translateY(-20px)';
+
+        setTimeout(() => {
+          initialMessage.style.display = 'none';
+          loveDeclaration.classList.add('show');
+          loveDeclaration.style.opacity = '1';
+          loveDeclaration.style.transform = 'translateY(0)';
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
